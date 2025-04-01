@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Management - Create Account</title>
+    <link rel="stylesheet" href="create.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create Your Account</h2>
+
+        <form action="create.php" method="POST" autocomplete="off">
+            <!-- Personal Information -->
+            <div class="box personal-info">
+                <fieldset>
+                    <legend>
+                        <div class="legend-container">
+                            <span>Personal Information</span>
+                            <img src="pi.jpg" alt="Logo" class="logo">
+                        </div>
+                    </legend>
+                    <label>Full Name: <input type="text" name="fullname" required></label>
+                    <label>Email Address: <input type="email" name="email" required></label>
+                    <label>Phone Number: <input type="tel" name="phone" required></label>
+                    <label>Date of Birth: <input type="date" name="dob" required></label>
+                    <label>Gender:
+                        <select name="gender" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="transgender">Transgender</option>
+                        </select>
+                    </label>
+                    <label>Address: <input type="text" name="address" required></label>
+                    <label>Country/Region: <input type="text" name="country" required></label>
+                </fieldset>
+            </div>
+
+            <!-- Account Security Information -->
+            <div class="box account-security">
+                <fieldset>
+                    <legend>
+                        <div class="legend-container">
+                            <span>Account Security</span>
+                            <img src="as.jpg" alt="Logo" class="logo">
+                        </div>
+                    </legend>
+                    <label>Username: <input type="text" name="username" required></label>
+                    <label>Password: <input type="password" name="password" required></label>
+                    <label>Confirm Password: <input type="password" name="confirm_password" required></label>
+                </fieldset>
+            </div>
+
+            <!-- Financial Information -->
+            <div class="box financial-info">
+                <fieldset>
+                    <legend>
+                        <div class="legend-container">
+                            <span>Financial Information</span>
+                            <img src="fi.jpg" alt="Logo" class="logo">
+                        </div>
+                    </legend>
+                    <label>Bank Account Details: <input type="text" name="bank_details"></label>
+                    <label>Income Sources: <input type="text" name="income_sources"></label>
+                    <label>Credit Card Information: <input type="text" name="credit_card"></label>
+                    <label>Tax ID/SSN: <input type="text" name="tax_id"></label>
+                </fieldset>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="create-btn">Create Account</button>
+                <button type="button" class="back-btn" onclick="window.location.href='login.html'">Back to Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            let username = document.querySelector("input[name='username']").value;
+            let password = document.querySelector("input[name='password']").value;
+            let confirmPassword = document.querySelector("input[name='confirm_password']").value;
+        
+            let usernameRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+            if (!usernameRegex.test(username)) {
+                alert("❌ Username must be at least 6 characters long and contain at least one letter and one digit!");
+                event.preventDefault();
+                
+            }
+            if (password.length < 8) {
+                alert("❌ Password must be at least 8 characters!");
+                event.preventDefault();
+            }
+        
+            if (password !== confirmPassword) {
+                alert("❌ Passwords do not match!");
+                event.preventDefault();
+
+            }
+       
+        });
+        </script>
+</body>
+</html>

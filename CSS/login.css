@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Full-Screen Background */
+body {
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;  /* Center vertically */
+    justify-content: center;  /* Center horizontally */
+    padding: 0;
+    position: relative;
+}
+
+/* Welcome text at the top left */
+.header {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Opaque Solid Red Login Box */
+.login-box {
+    background: red; /* Solid red background */
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Light shadow effect */
+    color: white;
+    opacity: 0; /* Start with hidden state */
+    animation: fadeIn 5s forwards; /* Apply fadeIn animation */
+}
+
+/* Title */
+.login-box h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.login-box label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+    color: black;
+}
+
+.login-box input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Login Button */
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-box button:hover {
+    background: #333;
+}
+
+/* Forgot Password & OR Separator */
+.forgot-password {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+.or-divider {
+    margin: 20px 0;
+    font-size: 14px;
+    position: relative;
+}
+
+.or-divider:before,
+.or-divider:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.or-divider:before {
+    left: 0;
+}
+
+.or-divider:after {
+    right: 0;
+}
+
+.or-divider span {
+    position: relative;
+    padding: 0 10px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+/* Keyframes for the fadeIn animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End in the original position */
+    }
+}

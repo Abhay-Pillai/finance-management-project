@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="budget.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js library -->
+</head>
+<body>
+    <nav>
+        <div class="title">Budget Tracker</div>
+    </nav>
+
+    <div class="container">
+        <h2>Track Your Budget</h2>
+        <label for="income">Monthly Income:</label>
+        <input type="number" id="income" placeholder="Enter your monthly income">
+
+        <h3>Monthly Expenses</h3>
+        <label for="rent">Rent:</label>
+        <input type="number" id="rent">
+        <label for="food">Food:</label>
+        <input type="number" id="food">
+        <label for="transport">Transport:</label>
+        <input type="number" id="transport">
+        <label for="groceries">Groceries:</label>
+        <input type="number" id="groceries">
+        <label for="other">Other:</label>
+        <input type="number" id="other">
+
+        <h3>Annual Expenses</h3>
+        <label for="healthInsurance">Health Insurance:</label>
+        <input type="number" id="healthInsurance">
+        <label for="carInsurance">Car Insurance:</label>
+        <input type="number" id="carInsurance">
+        <label for="homeInsurance">Home Insurance:</label>
+        <input type="number" id="homeInsurance">
+        <label for="vacation">Vacation:</label>
+        <input type="number" id="vacation">
+        <label for="taxes">Taxes:</label>
+        <input type="number" id="taxes">
+
+        <button id="calculate-btn">Calculate Budget</button>
+
+        <h3>Results</h3>
+        <p>Total Monthly Expenses: <span id="totalMonthly">0</span></p>
+        <p>Total Annual Expenses (Monthly Equivalent): <span id="totalAnnual">0</span></p>
+        <p>Savings per Month: <span id="savings">0</span></p>
+        <p>Yearly Savings: <span id="yearlySavings">0</span></p>
+
+        <button id="show-graph-btn">Show Savings Graph</button>
+        <canvas id="savingsChart"></canvas> <!-- Chart canvas -->
+    </div>
+
+    <footer>
+        &copy; 2025 Budget Tracker. All rights reserved.
+    </footer>
+
+    <script src="budget.js"></script>
+</body>
+</html>

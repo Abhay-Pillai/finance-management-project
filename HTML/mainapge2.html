@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Management Dashboard</title>
+    <style>
+        #video-splash {
+            position: center; /* Fix the video to the top of the page */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 99%;
+            z-index: 9999; /* Keeps the video on top of the page content */
+        }
+
+        #splash-video {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;  /* Ensures the video covers the entire screen */
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #2d3b44; /* Dark background */
+            padding: 20px;
+            text-align: center;
+        }
+        nav .logo img {
+            display: block;
+            width: 100px; /* Adjust this value as per the size of your logo */
+            height: auto; /* Maintains aspect ratio */
+            position: absolute;
+            top: 10px; /* Adjust the top margin */
+            left: 20px; /* Adjust the left margin */
+        }
+        nav .title {
+        
+            margin-top: 20px; /* Ensure the title is below the logo */
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav ul li {
+            display: inline;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Adjusted for better visibility */
+            overflow: hidden;
+            background-color:darkblue;
+        }
+        
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures full image is visible */
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .banner img.active {
+            opacity: 1;
+        }
+        
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background: #ffffff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section title styles */
+        h2 {
+            color: #35424a;
+        }
+
+        /* Form styles */
+        form {
+            margin: 20px 0;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 5px 0;
+            width: calc(100% - 22px);
+        }
+
+        /* Button hover effects */
+        button {
+            background: #35424a;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2c3e50;
+        }
+
+                footer {
+                    text-align: center;
+                    padding: 10px 0;
+                    background: #35424a;
+                    color: #ffffff;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+        <!-- Video Splash Section -->
+        <div id="video-splash">
+            <video autoplay muted id="splash-video">
+                <source src="animation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    <nav>
+        <div class="nav-left">
+            <div class="title">Welcome to the Finance Management Dashboard</div>
+            <div class="logo"><img src="logo.jpg" alt="Logo"></div>
+            
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="#">Currency Converter</a></li>
+                <li><a href="#">Backlog of Work</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Finance Calculator</a></li>
+                <li><a href="#">Login Page</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <div class="banner">
+        <img src="image1_resized.jpg" class="active" alt="Banner 1">
+        <img src="image2_resized.jpg" alt="Banner 2">
+        <img src="image3_resized.jpg" alt="Banner 3">
+        <img src="image4_resized.jpg" alt="Banner 4">
+        <img src="image5_resized.jpg" alt="Banner 5">
+    </div>
+
+
+    <main>
+        <section id="currency-converter">
+            <h2>Currency Converter</h2>
+            <form id="converter-form">
+                <input type="number" id="amount" placeholder="Amount" required>
+                <select id="from-currency">
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                </select>
+                <span>to</span>
+                <select id="to-currency">
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                </select>
+                <button type="submit">Convert</button>
+            </form>
+            <div id="conversion-result"></div>
+        </section>
+
+        <section id="finance-calculator">
+            <h2>Finance Calculator</h2>
+            <form id="calculator-form">
+                <input type="number" id="principal" placeholder="Principal Amount" required>
+                <input type="number" id="rate" placeholder="Interest Rate (%)" required>
+                <input type="number" id="time" placeholder="Time (years)" required>
+                <button type="submit">Calculate</button>
+            </form>
+            <div id="calculation-result"></div>
+        </section>
+
+        <section id="backlog">
+            <h2>Backlog of Work</h2>
+            <ul>
+                <li>Review budget for Q1</li>
+                <li>Prepare financial report</li>
+                <li>Update investment portfolio</li>
+                <li>Schedule meeting with accountant</li>
+            </ul>
+        </section>
+
+        <section id="About us">
+            <h2>About us</h2>
+            <ul>
+                <li>testing about</li>
+            </ul>
+        </section>
+
+        <section id="video-link-section">
+            <h2>Helpful Video</h2>
+
+            <ul>Watch this helpful finance video:</p>
+
+            <a href="https://www.youtube.com/watch?v=WNm_ez1h7Tc" target="_blank">Click here to watch the video</a>   
+        </section>
+    </main>
+
+   
+
+    <footer>
+        <p>&copy; 2025 Finance Management. All rights reserved.</p>
+    </footer>
+    
+    <script src="script2.js"></script>
+    <script src="animation.js"></script>
+
+    <script>
+        let images = document.querySelectorAll('.banner img');
+        let index = 0;
+
+        function changeImage() {
+            images[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+        }
+
+        setInterval(changeImage, 3000);
+    </script>
+</body>
+</html>
+
+

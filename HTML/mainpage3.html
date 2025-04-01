@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Management Dashboard</title>
+    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href= "chatbot.css">
+    
+</head>
+<body>
+
+    <!-- Video Splash Section -->
+    <div id="video-splash">
+        <video autoplay muted id="splash-video">
+            <source src="animate.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Main Content (Initially Hidden) -->
+    <div id="main-content">
+        <nav>
+            <div class="nav-left">
+                <div class="title">Finance Management Dashboard</div>
+                <div class="logo"><img src="logo.jpg" alt="Logo"></div>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#" id="currency-link">Currency Converter</a></li>
+                    <li><a href="#" id="finance-link">Finance Calculator</a></li>
+                    <li><a href="#" id="calculator-link">Tax Calculator</a></li>
+                    <li><a href="budget.html" >Budget Tracker</a></li>
+                    <li><a href="#" id="graph-link">Location</a></li>
+                    <li><a href="#" id="video-link">Video</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="banner">
+            <img src="image4_resized.jpg" class="active" alt="Banner 5">
+            <img src="image5_resized.jpg" alt="Banner 1">
+            <img src="image1_resized.jpg" alt="Banner 2">
+            <img src="image2_resized.jpg" alt="Banner 3">
+            <img src="image3_resized.jpg" alt="Banner 4">
+            
+        </div>
+
+        <main>
+            <section id="currency-converter">
+                <h2>Currency Converter</h2>
+                <form id="converter-form">
+                    <input type="number" id="amount" placeholder="Amount" required>
+                    <select id="from-currency">
+                        <option value="INR">INR</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                    </select>
+                    <div class="down-arrow">↓</div>
+                    <select id="to-currency">
+                        <option value="INR">INR</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                    </select>
+                    <button type="submit">Convert</button>
+                </form>
+                <div id="conversion-result"></div>
+            </section>
+
+            
+            <section id="finance-calculator">
+                <h2>Finance Calculator</h2>
+                <form id="calculator-form">
+                    <input type="number" id="principal" placeholder="Principal Amount" required>
+                    <input type="number" id="rate" placeholder="Interest Rate (%)" required>
+                    <input type="number" id="time" placeholder="Time (years)" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="calculation-result"></div>
+            </section>
+
+            <title>Tax Calculator with Deductions</title>
+        <style>
+
+            
+        </style>
+            <section id="calculator-container">
+                <h2>Tax Calculator with Deductions</h2>
+                <!-- Income Input -->
+
+                <label for="income">Enter Your Annual Income (₹):</label>
+                <input type="number" id="income" class="input-field" placeholder="Total Income (e.g., 500000)" required>
+            
+                <!-- Tax Deductions Section (Checkboxes with Fixed Amounts) -->
+                <label for="deductions">Select Tax Deductions:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="section80c" value="150000"> 
+                    <label for="section80c">Section 80C (Maximum ₹1,50,000)</label><br>
+                    
+                    <input type="checkbox" id="section80d" value="25000"> 
+                    <label for="section80d">Section 80D (Health Insurance - ₹25,000)</label><br>
+                    
+                    <input type="checkbox" id="section80g" value="10000"> 
+                    <label for="section80g">Section 80G (Donations - ₹10,000)</label><br>
+                    
+                    <input type="checkbox" id="home-loan-interest" value="200000"> 
+                    <label for="home-loan-interest">Home Loan Interest (Section 24(b) - ₹2,00,000)</label><br>
+                </div>
+            
+                <button onclick="calculateTax()">Calculate Tax</button>
+            
+                <div id="tax-result" class="result"></div>
+            </section>
+            
+
+
+            <!-- New "TRACK ME" section -->
+            <!-- New "TRACK ME" section -->
+            <section id="location-tracking">
+                <h2>Track My Location</h2>
+                <!-- Button to trigger geolocation -->
+                <button onclick="trackLocation()">TRACK ME</button>
+            
+                <!-- Div to display location information -->
+                <p id="location">Click the button to get your location.</p>
+                <p id="city"></p>
+                <p id="timezone"></p>
+            </section>
+
+
+            <section id="video-link-section">
+                <h2>Helpful Video</h2>
+
+                <ul>Watch this helpful finance video:</p>
+
+                <a href="https://www.youtube.com/watch?v=WNm_ez1h7Tc" target="_blank">Click here to watch the video</a>   
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Finance Management. All rights reserved.</p>
+
+            <h3>About Us</h3>
+            <p>We provide top-notch financial management solutions to help you track and manage your expenses efficiently.</p>
+
+            <h3>Contact Us</h3>
+            <p>Email: support@finance.com | Phone: +1 234 567 890</p>
+
+            </footer>
+        <script src="script2.js"></script>
+    </div>
+    <script src="animation.js"></script>
+
+    <script>
+        // Image slider function
+        let images = document.querySelectorAll('.banner img');
+        let index = 0;
+
+        function changeImage() {
+            images[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+        }
+
+        setInterval(changeImage, 4000);
+
+        </script>
+        <div id="chatbot-button">
+            <img src="bot.jpg" alt="Chatbot">
+        </div>
+
+        <!-- Chatbot Window -->
+        <div id="chatbot-container">
+            <div id="chatbot-header">
+                <span>Finance Chatbot</span>
+                <button id="close-chatbot">&times;</button>
+            </div>
+            <div id="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" placeholder="Ask me about finance...">
+            <button id="send-message">Send</button>
+        </div>
+
+        <script src="chatbot.js"></script>
+
+
+        
+    </script>
+    
+
+</body>
+</html>

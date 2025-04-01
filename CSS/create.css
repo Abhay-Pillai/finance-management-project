@@ -1,0 +1,152 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url('createimage.jpg') no-repeat center center/cover; /* Set background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Main Container */
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    text-align: center;
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Box Styling */
+.box {
+    background: rgba(255, 255, 255, 0.8); /* Transparent box */
+    padding: 20px;
+    margin: 15px 10px; /* Adds spacing */
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Personal Information Box */
+.personal-info {
+    background: #007bff; /* Blue background */
+    color: white;
+    padding: 20px;        /* Match padding with other boxes */
+    border-radius: 10px;
+    text-align: left;     /* Align text and inputs like the other boxes */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.personal-info img {
+    width: 30px; /* Adjust logo size */
+    margin-right: 10px;
+}
+
+/* Account Security and Financial Information Box */
+.account-security, .financial-info {
+    background: #28a745; /* Green background for account security */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Ensure elements stack vertically */
+}
+
+.financial-info {
+    background: #dc3545; /* Red background for financial info */
+}
+
+/* Legend Container for horizontal text/logo layout */
+.legend-container {
+    display: flex;               /* Flexbox for horizontal alignment */
+    align-items: center;         /* Vertically align the items */
+    justify-content: flex-start; /* Align the text and logo to the left */
+}
+
+.legend-container span {
+    margin-right: 10px;          /* Add space between text and logo */
+}
+
+.logo {
+    height: 30px;                /* Set height for logo */
+    width: auto;                 /* Maintain aspect ratio of logo */
+}
+
+/* Fieldset and Legend Styling */
+fieldset {
+    border: none;
+    padding: 10px;
+}
+
+legend {
+    font-weight: bold;      /* Makes the text bold */
+    font-size: 1.5em;       /* Increases the text size */
+    padding: 5px;
+    color: #fff;            /* Ensures the text is white */
+}
+
+/* Label and Input Styling */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input,
+select {  
+    width: 100%;          /* Make the inputs take full width */
+    padding: 8px;         /* Match padding */
+    margin-top: 5px;      /* Space between inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Buttons Container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Buttons Styling */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.create-btn {
+    background: green;
+    color: white;
+}
+
+.create-btn:hover {
+    background: blue;
+}
+
+.back-btn {
+    background: red;
+    color: white;
+}
+
+.back-btn:hover {
+    background: blue;
+}

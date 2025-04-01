@@ -1,0 +1,31 @@
+
+#blue {
+    color: blue;
+}
+h2 {
+    color: green;
+}
+.Red{
+    background-color: aqua;
+    color:red;
+    font: 900;
+    font-size: 26px;
+}
+
+h1{
+    border: 1px solid black;
+    padding: 50px;
+    margin: 30px;
+    text-align: center;
+}
+#heading {
+    background-color: yellow;
+}
+
+@media screen and (max-width:768px) {
+    #heading{
+        background-color: skyblue;
+        font-size: 20px;
+    }
+}
+

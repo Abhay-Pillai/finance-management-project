@@ -1,0 +1,31 @@
+<!-- Updated server.php (Login Form) -->
+<?php
+session_start();
+
+//If user is already logged in, redirect to dashboard.php
+if (isset($_SESSION["username"])) {
+    header("Location: dashboard.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+    <h2>Login</h2>
+    
+    <!-- Ensure form submits POST data correctly -->
+    <form action="log.php" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+</html>
